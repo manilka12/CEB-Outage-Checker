@@ -27,7 +27,7 @@ jobs:
           pip install requests beautifulsoup4
       
       - name: Download previous notification history
-        uses: dawidd6/action-download-artifact@v2
+        uses: dawidd6/action-download-artifact@v9
         with:
           name: notification-history
           path: .
@@ -42,7 +42,7 @@ jobs:
           
       - name: Save notification history
         if: success()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: notification-history
           path: notification_history.json
@@ -50,7 +50,7 @@ jobs:
           
       - name: Save outage data
         if: success()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: outage-data
           path: ceb_outages.json
