@@ -1,5 +1,3 @@
-Here's your rewritten GitHub README file:
-
 # CEB-Outage-Checker
 
 A tool that checks for Ceylon Electricity Board (CEB) outages affecting your registered accounts and sends notifications.
