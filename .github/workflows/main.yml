@@ -4,9 +4,6 @@ on:
   schedule:
     # Run at 0:00, 8:00, and 17:00 UTC (adjust as needed for your timezone)
     - cron: "*/1 * * * *"
-    - cron: '0 0 * * *'
-    - cron: '0 8 * * *'
-    - cron: '0 17 * * *'
 jobs:
   check_outages:
     runs-on: ubuntu-latest
