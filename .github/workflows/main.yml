@@ -1,11 +1,14 @@
 name: CEB Outage Checker
 
 on:
+  # Triggers the workflow every 5 minutes
   schedule:
-    # Run at 0:00, 8:00, and 17:00 UTC (adjust as needed for your timezone)
     - cron: "*/1 * * * *"
+ 
+      # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  check_outages:
+  # This workflow contains a single job called "cron"
+  cron:
     runs-on: ubuntu-latest
     
     steps:
