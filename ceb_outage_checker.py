@@ -12,6 +12,16 @@ username = os.environ.get("CEB_USERNAME", "")
 password = os.environ.get("CEB_PASSWORD", "")
 NTFY_URL = os.environ.get("NTFY_URL", "")
 
+# Get accounts from environment variable
+accounts_json = os.environ.get("CEB_ACCOUNTS", "[]")
+try:
+    accounts = json.loads(accounts_json)
+    if not accounts:
+        print("Warning: No accounts found in CEB_ACCOUNTS environment variable")
+except json.JSONDecodeError:
+    print("Error: Invalid JSON format in CEB_ACCOUNTS environment variable")
+    accounts = []
+
 # Constants
 NOTIFICATION_HISTORY_FILE = "notification_history.json"
 
@@ -125,13 +135,7 @@ def login_and_fetch_outages(force_tomorrow_notifications=False):
     
     # Check if login was successful
     if login_response.status_code == 200:
-        print("Login successful!")
-        accounts = [
-            {'AcctNo': '4603310609', 'AcctName': 'A7'},
-            {'AcctNo': '4604009007', 'AcctName': 'A8'},
-            {'AcctNo': '4612288009', 'AcctName': 'A48'}
-        ]
-        
+        print("Login successful!")       
         # Dictionary to track unique outages by time and description
         unique_outages = {}
         
