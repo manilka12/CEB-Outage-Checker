@@ -4,7 +4,8 @@ on:
   # Triggers the workflow every 6 hours
   schedule:
     - cron: "0 */6 * * *"
- 
+  
+  workflow_dispatch:
       # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "cron"
