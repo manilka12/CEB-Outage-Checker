@@ -27,10 +27,11 @@ jobs:
           pip install requests beautifulsoup4
       
       - name: Download previous notification history
-        uses: dawidd6/action-download-artifact@v9
+        uses: dawidd6/action-download-artifact@v2
         with:
           name: notification-history
           path: .
+          workflow: ceb-outage-checker.yml
           if_no_artifact_found: warn
       
       - name: Run outage checker
