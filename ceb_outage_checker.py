@@ -143,7 +143,7 @@ def login_and_fetch_outages(force_tomorrow_notifications=False):
             
             # Calculate date range (current month)
             today = datetime.now()
-            start_date = today.strftime('%Y-%m-%d')
+            start_date = (today - timedelta(days=30)).strftime('%Y-%m-%d')
             end_date = (today + timedelta(days=30)).strftime('%Y-%m-%d')
             
             # Fetch calendar data
