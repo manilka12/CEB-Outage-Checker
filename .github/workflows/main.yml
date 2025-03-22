@@ -38,6 +38,7 @@ jobs:
           CEB_USERNAME: ${{ secrets.CEB_USERNAME }}
           CEB_PASSWORD: ${{ secrets.CEB_PASSWORD }}
           NTFY_URL: ${{ secrets.NTFY_URL }}
+          CEB_ACCOUNTS: ${{ secrets.CEB_ACCOUNTS }}
         run: python ceb_outage_checker.py
           
       - name: Save notification history
